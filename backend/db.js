@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 const bycrpt = require('bcrypt');
+const { MONGODB_URI } = require('./configuration');
 
-
-// mongoose.connect("mongodb://localhost:27017/paytm?replicaSet=rs0", {
-mongoose.connect("mongodb+srv://learnhk:learnhk1234@cluster0.i70lm.mongodb.net/paytm", {
-  // serverSelectionTimeoutMS: 50000
+mongoose.connect(`${MONGODB_URI}`, {
 }).then(() => {
   console.log("Connected to MongoDB");
 }
